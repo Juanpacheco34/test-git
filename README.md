@@ -1,1 +1,3 @@
-# test-git
+# **_Git Test_**
+
+*Aprendiendo comandos Git & GitHub con Jon mircha*  
