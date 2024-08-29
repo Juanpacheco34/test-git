@@ -25,9 +25,38 @@ git push -u origin "rama"
 ## Ramas
 
 ```bash
+# mostrar ramas
 git branch
+
+#crear y copiar todo
 git branch -m "rama actual" "rama nueva"
+
+# eliminar rama en remoto
 git push origin --delete "rama a eliminar"
+
+# crear
+git branch "nombre de la rama"
+
+# cambiar de rama
+git checkout "nombre de la rama"
+
+# crear y cambiarte a esa rama
+git checkout -b "nombre de la rama"
+
+# eliminar rama en local
+git branch -d "nombre de la rama"
+
+# forzar elimacion de rama
+git branch -D "nombre de la rama"
+
+# mostrar ramas no fusinadas a la actual
+git branch --no-merged
+
+# mostrar rams fusionadas a al actual
+git branch --merged
+
+# rebasar rama
+git rebase "nombre de la rama que estac como principal"
 
 ```
 
