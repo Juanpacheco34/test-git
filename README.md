@@ -56,9 +56,9 @@ git branch --no-merged
 git branch --merged
 
 # rebasar rama 'ESTUDIAR MAS EL TEMA'
-git rebase "nombre de la rama que estac como principal"
+git rebase "nombre de la rama que esta como principal"
 
-# fusionar ramas 'Ubicarse en la rama que tiene los datos a copiar"
+# fusionar ramas 'Ubicarse a la rama que vas a copiar los datos y llamar a la que tiene los datos"
 git merge "nombre de la rama"
 
 ```
