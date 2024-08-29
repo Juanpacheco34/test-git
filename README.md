@@ -57,3 +57,8 @@ doc/*.txt
 # ignorar todos los archivos terminados en .txt dentro de la carpeta doc y también en sus subcarpetas
 doc/**/*.txt
 ```
+
+## Git Clone
+``` bash
+git clone "url del repo" 
+```
