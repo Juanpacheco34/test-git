@@ -37,7 +37,8 @@ git log   # informacion detallada del commit
 git log --oneline  # informacion basica del commit
 git log --oneline --graph --all # muestra los log con una grafica (es irrelevante)
 
-#  Moverte a un commit en particular para revisar cuando termines de hacer eso regrasa a tu rama con el git checkout nombre de rama
+#  Moverte a un commit en particular para revisar
+# cuando termines de hacer eso regrasa a tu rama con el git checkout nombre de rama
 git checkout "id del commit"
 ```
 
@@ -50,7 +51,8 @@ git commit --amend --no-edit
 # Ralizar cambio del commit solamente sin agregar cambios nuevos en los documentos trackeados
 git commit --amend -m "nuevo commit"
 
-# Eliminar ultimo commit enviado al remoto para ver los cambios realizar push o al local si no lo has enviado al remoto 'TENER CUIDADO'
+# Eliminar ultimo commit enviado al remoto para ver los cambios realizar push
+# o al local si no lo has enviado al remoto 'TENER CUIDADO'
 git reset --hard HEAD~1
 
 ```
@@ -121,7 +123,8 @@ carpeta
 # pero no en sus subcarpetas
 doc/*.txt
 
-# ignorar todos los archivos terminados en .txt dentro de la carpeta doc y también en sus subcarpetas
+# ignorar todos los archivos terminados en .txt dentro de la carpeta doc
+# y también en sus subcarpetas
 doc/**/*.txt
 ```
 
