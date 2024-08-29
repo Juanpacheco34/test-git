@@ -227,3 +227,6 @@ git tag -a "numero de etiqueta or version" -m "mensaje del commit"
 git push --tags
 
 ```
+---
+### **_[Aprende mas a fondo con sobre Git & GitHub con JonMircha](https://www.youtube.com/watch?v=suzMNqDQiyU)_**
+---
