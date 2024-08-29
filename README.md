@@ -1,6 +1,7 @@
 # **_Git Test_**
 
-_Aprendiendo Git & GitHub con JonMircha_
+_Aprendiendo Git & GitHub_
+
 
 ## Comando Basicos:
 
@@ -42,7 +43,7 @@ git log --oneline --graph --all # muestra los log con una grafica (es irrelevant
 git checkout "id del commit"
 ```
 
-#### `Evitar usar estos comandos si ya enviaste al remoto ya que puede ocasionarte conflictos.`
+>> `Evitar usar estos comandos si ya enviaste al remoto ya que puede ocasionarte conflictos.`
 
 ```bash
 #  Realizar nuevo commit sin editar el mensaje
@@ -98,7 +99,7 @@ git merge "nombre de la rama"
 
 ```
 
-- `Colocar por default en el HEAD del remoto a esta rama x aunque es mas facil hacerlo en el propio github en setting`
+>> `Colocar por default en el HEAD del remoto a esta rama x aunque es mas facil hacerlo en el propio github en setting`
 
 ```bash
 git symbolic-ref refs/remotes/origin/HEAD refs/remotes/origin/"nombre de la rama"
@@ -138,4 +139,25 @@ git clone "url del repo"
 
 ```bash
 git log > commits.txt
+```
+
+## Historial
+
+![Flujo de Git&GitHub](img/git-status.png)
+>> **`Guiate con la imagen si tienes alguna duda`**
+``` bash
+# Muestra si tenemos cambios para subir al remoto
+git status
+
+# Borra el HEAD en local
+git reset --soft
+
+# Borrar el staging que es despues del git add 'RECUERDA QUE ESTO ES SOLO EN LOCAL'
+git reset --mixed
+git restore --staged "nombre del archivo"
+
+# Borran todo lo que crees despues del ultimo commit SI lo has guardado si no es asi no veras ninguna accion 
+git reset --hard
+
+
 ```
