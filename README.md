@@ -30,17 +30,20 @@ git push -u origin "rama"
 ```
 
 ## Commit
-``` bash
-# Ver los commit 
+
+```bash
+# Ver los commit
 git log   # informacion detallada del commit
 git log --oneline  # informacion basica del commit
+git log --oneline --graph --all # muestra los log con una grafica (es irrelevante)
 
-#  Moverte a un commit en particular para revisar cuando termines de hacer eso regrasa a tu rama con el git branch nombre de rama
+#  Moverte a un commit en particular para revisar cuando termines de hacer eso regrasa a tu rama con el git checkout nombre de rama
 git checkout "id del commit"
-``` 
+```
 
 #### `Evitar usar estos comandos si ya enviaste al remoto ya que puede ocasionarte conflictos.`
-``` bash
+
+```bash
 #  Realizar nuevo commit sin editar el mensaje
 git commit --amend --no-edit
 
@@ -93,13 +96,15 @@ git merge "nombre de la rama"
 
 ```
 
- -  `Colocar por default en el HEAD del remoto a esta rama x aunque es mas facil hacerlo en el propio github en setting`
-``` bash
+- `Colocar por default en el HEAD del remoto a esta rama x aunque es mas facil hacerlo en el propio github en setting`
+
+```bash
 git symbolic-ref refs/remotes/origin/HEAD refs/remotes/origin/"nombre de la rama"
 ```
 
 ## .Gitignore
-``` bash 
+
+```bash
 
 # esto es un comentario
 archivo.ext
@@ -121,6 +126,13 @@ doc/**/*.txt
 ```
 
 ## Git Clone
-``` bash
-git clone "url del repo" 
+
+```bash
+git clone "url del repo"
+```
+
+## Guardar Commit
+
+```bash
+git log > commits.txt
 ```
