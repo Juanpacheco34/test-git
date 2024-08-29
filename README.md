@@ -1,6 +1,6 @@
 # **_Git Test_**
 
-_Aprendiendo comandos Git & GitHub con JonMircha_
+_Aprendiendo Git & GitHub con JonMircha_
 
 ## Comando Basicos:
 
@@ -35,7 +35,7 @@ git push -u origin "rama"
 git log   # informacion detallada del commit
 git log --oneline  # informacion basica del commit
 
-#  Moverte a un commit en particular
+#  Moverte a un commit en particular para revisar cuando termines de hacer eso regrasa a tu rama con el git branch nombre de rama
 git checkout "id del commit"
 ``` 
 
