@@ -224,7 +224,7 @@ git push origin "numero de etiqueta or version"
 # Proceso 2: para guardar cambios en remoto para etiquetas.
 git add .
 git tag -a "numero de etiqueta or version" -m "mensaje del commit"
-git push --tags
+git push --tags 
 
 ```
 ---
