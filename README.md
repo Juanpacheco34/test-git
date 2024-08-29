@@ -2,7 +2,6 @@
 
 _Aprendiendo Git & GitHub_
 
-
 ## Comando Basicos:
 
 ```bash
@@ -43,7 +42,7 @@ git log --oneline --graph --all # muestra los log con una grafica (es irrelevant
 git checkout "id del commit"
 ```
 
->> `Evitar usar estos comandos si ya enviaste al remoto ya que puede ocasionarte conflictos.`
+> > `Evitar usar estos comandos si ya enviaste al remoto ya que puede ocasionarte conflictos.`
 
 ```bash
 #  Realizar nuevo commit sin editar el mensaje
@@ -102,10 +101,32 @@ git merge "nombre de la rama"
 
 ```
 
->> `Colocar por default en el HEAD del remoto a esta rama x aunque es mas facil hacerlo en el propio github en setting`
+> > `Colocar por default en el HEAD del remoto a esta rama x aunque es mas facil hacerlo en el propio github en setting`
 
 ```bash
 git symbolic-ref refs/remotes/origin/HEAD refs/remotes/origin/"nombre de la rama"
+```
+
+## Remotos
+
+```bash
+# Mostrar nombre del remoto
+git remote
+
+# Añadir Remoto y Repositorio
+git remote add origin/"or cualquier otro nombre" "url del github"
+
+# Mostrar nombre del remoto y el repositorio al que estamos conectados
+git remote -v
+
+# Cambiar el nombre del remoto
+git remote rename "nombre actual" "nombre nuevo"
+
+# Eliminar el remote del local
+git remote remove "nombre del remoto"
+
+# Descargar rama que esta en el repositorio remoto
+git checkout --track -b "nombre de la rama" origin"or nombre del remoto "/"nombre de la rama"
 ```
 
 ## .Gitignore
@@ -147,8 +168,10 @@ git log > commits.txt
 ## Historial
 
 ![Flujo de Git&GitHub](img/git-status.png)
->> **`Guiate con la imagen si tienes alguna duda`**
-``` bash
+
+> > **`Guiate con la imagen si tienes alguna duda`**
+
+```bash
 # Muestra si tenemos cambios para subir al remoto
 git status
 
@@ -159,13 +182,48 @@ git reset --soft
 git reset --mixed
 git restore --staged "nombre del archivo"
 
-# Borran todo lo que crees despues del ultimo commit 
-#SI lo has guardado si no es asi no veras ninguna accion 
+# Borran todo lo que crees despues del ultimo commit
+#SI lo has guardado si no es asi no veras ninguna accion
 git reset --hard
 
 # Regresa a un commit en particular
 #'TENER CUIDADA DESPUES DE HACER EL RESET NO HAY VUELTA ATRAS SI HAS HECHO PUSH'
 git reset "id del commit"
 git reset --hard "id del commmit"
+
+```
+
+## Etiquetas
+
+> > `La usamos para versionar el proyecto en caso de que vaya escalando con el tiempo`
+
+```bash
+# Mostrar etiquetas creadas
+git tag
+
+# Mostrar informacion de la etiqueta
+git show "numero de etiqueta or version"
+
+# Crear etiquetas
+git tag v1.0.0/"numero de etiqueta or version"
+
+# Eliminar etiquetas
+git tag -d "numero de etiqueta or version"
+
+
+```
+>> **`Proceso de Guardado Usar cual quiera de las dos dependiendo la necesida que tengas`**
+``` bash
+# Proceso 1: para guardar cambios en remoto para etiquetas 
+git add .
+git tag "numero de etiqueta or version"
+git commit -m "numero de etiqueta or version"
+git push origin "numero de etiqueta or version"
+
+
+# Proceso 2: para guardar cambios en remoto para etiquetas 
+git add .
+git tag -a "numero de etiqueta or version" -m "mensaje del commit"
+git push --tags
 
 ```
