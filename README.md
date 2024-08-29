@@ -5,20 +5,27 @@ _Aprendiendo comandos Git & GitHub con JonMircha_
 ## Comando Basicos:
 
 ```bash
+#Configuracion inicial
 git init
 git --version
 git config --global user.name "nombre"
 git config --global user.email "correo"
 git --list
 
+# Añadiendo repo a trabajar
 git remote add origin "url"
 git remote -v
 
+# Actualizar en local a lo que tienes en remoto "TENER CUIDADO"
 git pull
+
+# Proceso para enviar tus datos del local al remoto
 git add  "nombre del documento"
 git add .
 git commit
 git commit -m "mensaje"
+
+# Enviar cambios del local al remoto
 git push -u origin "rama"
 ```
 
