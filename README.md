@@ -55,12 +55,12 @@ git branch --no-merged
 # mostrar rams fusionadas a al actual
 git branch --merged
 
-# rebasar rama
+# rebasar rama 'ESTUDIAR MAS EL TEMA'
 git rebase "nombre de la rama que estac como principal"
 
 ```
 
- -  `Colocar por default en el HEAD del local a esta rama x`
+ -  `Colocar por default en el HEAD del remoto a esta rama x aunque es mas facil hacerlo en el propio github en setting`
 ``` bash
 git symbolic-ref refs/remotes/origin/HEAD refs/remotes/origin/"nombre de la rama"
 ```
