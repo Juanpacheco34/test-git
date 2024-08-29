@@ -52,6 +52,9 @@ git commit --amend --no-edit
 # Ralizar cambio del commit solamente sin agregar cambios nuevos en los documentos trackeados
 git commit --amend -m "nuevo commit"
 
+# Ubicacion del los HEAD
+git reflog
+
 # Eliminar ultimo commit enviado al remoto para ver los cambios realizar push
 # o al local si no lo has enviado al remoto 'TENER CUIDADO'
 git reset --hard HEAD~1
@@ -156,7 +159,13 @@ git reset --soft
 git reset --mixed
 git restore --staged "nombre del archivo"
 
-# Borran todo lo que crees despues del ultimo commit SI lo has guardado si no es asi no veras ninguna accion 
+# Borran todo lo que crees despues del ultimo commit 
+#SI lo has guardado si no es asi no veras ninguna accion 
 git reset --hard
+
+# Regresa a un commit en particular
+#'TENER CUIDADA DESPUES DE HACER EL RESET NO HAY VUELTA ATRAS SI HAS HECHO PUSH'
+git reset "id del commit"
+git reset --hard "id del commmit"
 
 ```
