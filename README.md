@@ -29,6 +29,26 @@ git commit -m "mensaje"
 git push -u origin "rama"
 ```
 
+## Commit
+``` bash
+
+# Ver los commit 
+git log   # informacion detallada del commit
+git log --oneline  # informacion basica del commit
+
+#  Realizar nuevo commit sin editar el mensaje
+git commit --amend --no-edit
+
+# Ralizar cambio del commit solamente sin agregar cambios nuevos en los documentos trackeados
+git commit --amend -m "nuevo commit"
+
+# Eliminar ultimo commit enviado al remoto para ver los cambios realizar push o al local si no lo has enviado al remoto 'TENER CUIDADO'
+git reset --hard HEAD~1
+
+#  Moverte a un commit en particular
+git checkout "id del commit"
+```
+
 ## Ramas
 
 ```bash
