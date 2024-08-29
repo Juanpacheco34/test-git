@@ -58,6 +58,9 @@ git branch --merged
 # rebasar rama 'ESTUDIAR MAS EL TEMA'
 git rebase "nombre de la rama que estac como principal"
 
+# fusionar ramas 'Ubicarse en la rama que tiene los datos a copiar"
+git merge "nombre de la rama"
+
 ```
 
  -  `Colocar por default en el HEAD del remoto a esta rama x aunque es mas facil hacerlo en el propio github en setting`
