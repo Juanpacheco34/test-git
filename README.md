@@ -159,5 +159,4 @@ git restore --staged "nombre del archivo"
 # Borran todo lo que crees despues del ultimo commit SI lo has guardado si no es asi no veras ninguna accion 
 git reset --hard
 
-
 ```
