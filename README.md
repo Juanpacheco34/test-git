@@ -30,6 +30,7 @@ git push -u origin "rama"
 ```
 
 ## Commit
+
 #### `Evitar usar estos comandos si ya enviaste al remoto ya que puede ocasionarte conflictos.`
 ``` bash
 
