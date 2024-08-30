@@ -212,7 +212,7 @@ git tag -d "numero de etiqueta or version"
 
 
 ```
->> **`Proceso de Guardado Usar cual quiera de las dos dependiendo la necesida que tengas`**
+>> **`Proceso de Guardado usar cual quiera de las dos dependiendo la necesida que tengas`**
 ``` bash
 # Proceso 1: para guardar cambios en remoto para etiquetas 
 git add .
@@ -228,5 +228,5 @@ git push --tags
 
 ```
 ---
-### **_[Aprende mas a fondo con sobre Git & GitHub con JonMircha](https://www.youtube.com/watch?v=suzMNqDQiyU)_**
+### **_[Aprende mas a fondo sobre Git & GitHub con JonMircha](https://www.youtube.com/watch?v=suzMNqDQiyU)_**
 ---
