@@ -10,14 +10,14 @@ git init
 git --version
 git config --global user.name "nombre"
 git config --global user.email "correo"
-git --list
+git config --list
 
 # Añadiendo repo a trabajar
 git remote add origin "url"
 git remote -v
 
 # Actualizar en local a lo que tienes en remoto "TENER CUIDADO"
-git pull
+git pull origin "rama"
 
 # Proceso para enviar tus datos del local al remoto
 git add  "nombre del documento"
