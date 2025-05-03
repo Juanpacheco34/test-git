@@ -1,232 +1,220 @@
-# **_Git Test_**
+# **Git Test**
 
 _Aprendiendo Git & GitHub_
 
-## Comando Basicos:
+## Comandos básicos:
 
 ```bash
-#Configuracion inicial
+# Configuración inicial
 git init
 git --version
 git config --global user.name "nombre"
 git config --global user.email "correo"
 git config --list
 
-# Añadiendo repo a trabajar
+# Añadir repositorio remoto
 git remote add origin "url"
 git remote -v
 
-# Actualizar en local a lo que tienes en remoto "TENER CUIDADO"
+# Sincronizar con la rama remota (CUIDADO)
 git pull origin "rama"
 
-# Proceso para enviar tus datos del local al remoto
-git add  "nombre del documento"
+# Preparar cambios para enviar
+git add "nombre_del_documento"
 git add .
-git commit
-git commit -m "mensaje"
+git commit -m "mensaje del commit"
 
-# Enviar cambios del local al remoto
+# Enviar cambios al repositorio remoto
 git push -u origin "rama"
 ```
 
-## Commit
+## Commits
 
 ```bash
-# Ver los commit
-git log   # informacion detallada del commit
-git log --oneline  # informacion basica del commit
-git log --oneline --graph --all # muestra los log con una grafica (es irrelevante)
+# Ver historial de commits
+git log                     # Detallado
+git log --oneline           # Básico
+git log --oneline --graph --all  # Con visualización gráfica
 
-#  Moverte a un commit en particular para revisar
-# cuando termines de hacer eso regrasa a tu rama con el git checkout nombre de rama
-git checkout "id del commit"
+# Moverse a un commit específico (modo lectura)
+git checkout "ID_del_commit"
+
+# Regresar a tu rama después de revisar
+git checkout nombre_rama
 ```
 
-> > `Evitar usar estos comandos si ya enviaste al remoto ya que puede ocasionarte conflictos.`
 
 ```bash
-#  Realizar nuevo commit sin editar el mensaje
+# Editar el último commit sin cambiar mensaje
 git commit --amend --no-edit
 
-# Ralizar cambio del commit solamente sin agregar cambios nuevos en los documentos trackeados
-git commit --amend -m "nuevo commit"
+# Cambiar mensaje del último commit
+git commit --amend -m "nuevo mensaje"
 
-# Ubicacion del los HEAD
+# Ver historial de HEAD
 git reflog
 
-# Eliminar ultimo commit enviado al remoto para ver los cambios realizar push
-# o al local si no lo has enviado al remoto 'TENER CUIDADO'
+# Eliminar último commit
 git reset --hard HEAD~1
-
 ```
 
 ## Ramas
 
 ```bash
-# mostrar ramas
+# Ver ramas disponibles
 git branch
 
-#crear y copiar todo
-git branch -m "rama actual" "rama nueva"
+# Crear rama
+git branch nombre_rama
 
-# eliminar rama en remoto
-git push origin --delete "rama a eliminar"
+# Cambiar de rama
+git checkout nombre_rama
 
-# crear
-git branch "nombre de la rama"
+# Crear y cambiar a una rama
+git checkout -b nombre_rama
 
-# cambiar de rama
-git checkout "nombre de la rama"
+# Eliminar rama local
+git branch -d nombre_rama
 
-# crear y cambiarte a esa rama
-git checkout -b "nombre de la rama"
+# Forzar eliminación
+git branch -D nombre_rama
 
-# eliminar rama en local
-git branch -d "nombre de la rama"
+# Eliminar rama remota
+git push origin --delete nombre_rama
 
-# forzar elimacion de rama
-git branch -D "nombre de la rama"
+# Renombrar rama actual
+git branch -m nuevo_nombre
 
-# mostrar ramas no fusinadas a la actual
+# Ramas fusionadas / no fusionadas
+git branch --merged
 git branch --no-merged
 
-# mostrar rams fusionadas a al actual
-git branch --merged
+# Rebase (estudiar bien antes de usar)
+git rebase rama_base
 
-# rebasar rama 'ESTUDIAR MAS EL TEMA'
-git rebase "nombre de la rama que esta como principal"
-
-# fusionar ramas 'Ubicarse a la rama que vas a copiar los datos y llamar a la que tiene los datos"
-git merge "nombre de la rama"
-
+# Fusionar ramas
+git merge nombre_de_la_rama
 ```
 
-> > `Colocar por default en el HEAD del remoto a esta rama x aunque es mas facil hacerlo en el propio github en setting`
+> ⚙️ **Establecer rama por defecto (también se puede hacer en GitHub Settings):**
 
 ```bash
-git symbolic-ref refs/remotes/origin/HEAD refs/remotes/origin/"nombre de la rama"
+git symbolic-ref refs/remotes/origin/HEAD refs/remotes/origin/nombre_rama
 ```
 
 ## Remotos
 
 ```bash
-# Mostrar nombre del remoto
+# Ver remotos configurados
 git remote
 
-# Añadir Remoto y Repositorio
-git remote add origin/"or cualquier otro nombre" "url del github"
+# Añadir remoto
+git remote add origin "url"
 
-# Mostrar nombre del remoto y el repositorio al que estamos conectados
+# Ver remotos con detalle
 git remote -v
 
-# Cambiar el nombre del remoto
-git remote rename "nombre actual" "nombre nuevo"
+# Renombrar remoto
+git remote rename nombre_actual nombre_nuevo
 
-# Eliminar el remote del local
-git remote remove "nombre del remoto"
+# Eliminar remoto
+git remote remove nombre
 
-# Descargar rama que esta en el repositorio remoto
-git checkout --track -b "nombre de la rama" origin"or nombre del remoto "/"nombre de la rama"
+# Descargar y rastrear una rama remota
+git checkout --track -b nombre_rama origin/nombre_rama
 ```
 
-## .Gitignore
+## `.gitignore`
 
-```bash
-
-# esto es un comentario
+```gitignore
+# Comentarios
 archivo.ext
-carpeta
-/archivo_desde_raiz.ext
+carpeta/
+archivo_desde_raiz.ext
 
-# ignorar todos los archivos que terminen en .log
+# Ignorar por extensión
 *.log
 
-# excepto production.log
+# Excepciones
 !production.log
 
-# ignorar los archivos terminados en .txt dentro de la carpeta doc,
-# pero no en sus subcarpetas
+# Ignorar solo en una carpeta
 doc/*.txt
 
-# ignorar todos los archivos terminados en .txt dentro de la carpeta doc
-# y también en sus subcarpetas
+# Ignorar también subcarpetas
 doc/**/*.txt
 ```
 
-## Git Clone
+## Clonar un repositorio
 
 ```bash
-git clone "url del repo"
+git clone "url"
 ```
 
-## Guardar Commit
+## Guardar historial de commits en un archivo
 
 ```bash
 git log > commits.txt
 ```
 
-## Historial
+## Historial de estado
 
-![Flujo de Git&GitHub](img/git-status.png)
+![Flujo de Git & GitHub](img/git-status.png)
 
-> > **`Guiate con la imagen si tienes alguna duda`**
+> **Guíate con la imagen si tienes dudas**
 
 ```bash
-# Muestra si tenemos cambios para subir al remoto
+# Ver estado actual
 git status
 
-# Borra el HEAD en local
+# Borrar solo el HEAD local
 git reset --soft
 
-# Borrar el staging que es despues del git add 'RECUERDA QUE ESTO ES SOLO EN LOCAL'
+# Borrar el staging (post `add`)
 git reset --mixed
-git restore --staged "nombre del archivo"
+git restore --staged nombre_archivo
 
-# Borran todo lo que crees despues del ultimo commit
-#SI lo has guardado si no es asi no veras ninguna accion
+# Borrar cambios no confirmados
 git reset --hard
 
-# Regresa a un commit en particular
-#'TENER CUIDADA DESPUES DE HACER EL RESET NO HAY VUELTA ATRAS SI HAS HECHO PUSH'
-git reset "id del commit"
-git reset --hard "id del commmit"
-
+# Volver a commit anterior
+git reset ID_commit
+git reset --hard ID_commit
 ```
 
 ## Etiquetas
 
-> > `La usamos para versionar el proyecto en caso de que vaya escalando con el tiempo`
+> 📌 Usadas para versionar proyectos
 
 ```bash
-# Mostrar etiquetas creadas
+# Ver etiquetas
 git tag
 
-# Mostrar informacion de la etiqueta
-git show "numero de etiqueta or version"
+# Ver detalle de una etiqueta
+git show v1.0.0
 
-# Crear etiquetas
-git tag v1.0.0/"numero de etiqueta or version"
+# Crear etiqueta simple
+git tag v1.0.0
 
-# Eliminar etiquetas
-git tag -d "numero de etiqueta or version"
-
-
+# Eliminar etiqueta
+git tag -d v1.0.0
 ```
->> **`Proceso de Guardado usar cual quiera de las dos dependiendo la necesida que tengas`**
-``` bash
-# Proceso 1: para guardar cambios en remoto para etiquetas 
+
+### Guardar etiquetas en remoto
+
+```bash
+# Método 1
 git add .
-git tag "numero de etiqueta or version"
-git commit -m "numero de etiqueta or version"
-git push origin "numero de etiqueta or version"
+git tag v1.0.0
+git commit -m "Versión 1.0.0"
+git push origin v1.0.0
 
-
-# Proceso 2: para guardar cambios en remoto para etiquetas.
+# Método 2 (anotada)
 git add .
-git tag -a "numero de etiqueta or version" -m "mensaje del commit"
-git push --tags 
-
+git tag -a v1.0.0 -m "Versión 1.0.0"
+git push --tags
 ```
+
 ---
-### **_[Aprende mas a fondo sobre Git & GitHub con JonMircha](https://www.youtube.com/watch?v=suzMNqDQiyU)_**
----
+
+### 📚 [Aprende más a fondo sobre Git & GitHub con Jon Mircha](https://www.youtube.com/watch?v=suzMNqDQiyU)
